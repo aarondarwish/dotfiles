@@ -1,4 +1,4 @@
-# dotfiles
+# Purpose
 A backup for config files, as well as a script that retrieves the dotfiles as well as recovers them.
 
 ## Backup
