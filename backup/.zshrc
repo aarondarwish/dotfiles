@@ -126,6 +126,7 @@ alias p='clippaste'
 alias temp='for i in `seq 1 1000`; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d°C" && echo "\nGPU:\n" && nvidia-smi | rg "\d+C"; sleep 1; done'
 alias s='systemctl suspend'
 alias scan='python ~/Projects/automation/autoscan/autoscan.py'
+alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
