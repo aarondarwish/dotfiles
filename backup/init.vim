@@ -30,6 +30,7 @@ Plug 'kamykn/spelunker.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'prabirshrestha/asyncomplete.vim'
 " Rust tools
 Plug 'neovim/nvim-lspconfig'
 "Plug 'simrat39/rust-tools.nvim'
@@ -175,3 +176,7 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight Normal guibg=none
 highlight NonText guibg=none
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
