@@ -111,7 +111,7 @@ alias l='exa --color=auto --icons --group-directories-first'
 alias la='l -a'
 alias ll='l --git -l'
 alias lt='l --tree -D -L 10 -I ${TREE_IGNORE}'
-alias lm='l | rg "[jpmw][pne]e?[bg34]p?"' # List common multimedia files such as jpg/jpeg, png, webp and mp3/4.
+alias lm='l | rg "[jpmwg][pnei]e?[bg34f]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp and mp3/4.
 alias vim='nvim'
 alias ua='sudo pacman --noconfirm -Syyyu'
 alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.45'

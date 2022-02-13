@@ -170,3 +170,8 @@ let g:coc_node_path = '/home/coder/.nvm/versions/node/v17.2.0/bin/node'
 " C++
 let g:clang_use_library = 1
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight Normal guibg=none
+highlight NonText guibg=none
