@@ -31,6 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 " Rust tools
 Plug 'neovim/nvim-lspconfig'
 "Plug 'simrat39/rust-tools.nvim'
@@ -180,3 +181,8 @@ highlight NonText guibg=none
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" Automatically enable the coloured parentheses.
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+autocmd VimEnter * RainbowParentheses .
