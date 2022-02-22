@@ -167,6 +167,12 @@ let g:vimtex_compiler_latexmk = {
 let g:vimtex_format_enabled = 1
 let g:vimtex_indent_enabled = 1
 
+" Hide warnings in VimTeX
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \]
+
 let g:coc_node_path = '/home/coder/.nvm/versions/node/v17.2.0/bin/node'
 
 " C++
@@ -184,5 +190,5 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Automatically enable the coloured parentheses.
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
-
+let g:rainbow#max_level = 16
 autocmd VimEnter * RainbowParentheses .
