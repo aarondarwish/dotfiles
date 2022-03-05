@@ -161,9 +161,9 @@ let g:vimtex_compiler_latexmk = {
                 \   '-interaction=nonstopmode',
                 \ ],
                 \}
-"let g:vimtex_compiler_latexmk_engines = {
-"            \ '_'                : '-xelatex',
-"            \}
+let g:vimtex_compiler_latexmk_engines = {
+            \ '_'                : '-xelatex',
+            \}
 let g:vimtex_format_enabled = 1
 let g:vimtex_indent_enabled = 1
 
