@@ -44,6 +44,9 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'lervag/vimtex'
 " C++
 Plug 'justmao945/vim-clang'
+" React
+"Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
 call plug#end()
 
 " Colorscheme options.
@@ -161,17 +164,17 @@ let g:vimtex_compiler_latexmk = {
                 \   '-interaction=nonstopmode',
                 \ ],
                 \}
-let g:vimtex_compiler_latexmk_engines = {
-            \ '_'                : '-xelatex',
-            \}
+"let g:vimtex_compiler_latexmk_engines = {
+"            \    '_'                : '-xelatex',
+"            \    }
 let g:vimtex_format_enabled = 1
 let g:vimtex_indent_enabled = 1
 
 " Hide warnings in VimTeX
 let g:vimtex_quickfix_ignore_filters = [
-      \ 'Underfull',
-      \ 'Overfull',
-      \]
+            \ 'Underfull',
+            \ 'Overfull',
+            \]
 
 let g:coc_node_path = '/home/coder/.nvm/versions/node/v17.2.0/bin/node'
 

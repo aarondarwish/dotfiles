@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+    exec tmux
 fi
 
 TREE_IGNORE="cache|log|logs|node_modules|vendor"
@@ -111,7 +111,7 @@ alias l='exa --color=auto --icons --group-directories-first'
 alias la='l -a'
 alias ll='l --git -l'
 alias lt='l --tree -D -L 10 -I ${TREE_IGNORE}'
-alias lm='l | rg "[jpmwg][pnei]e?[bg34f]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp and mp3/4.
+alias lm='l | rg "\.[jpmwgi][pneic]e?[bg34fo]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico and mp3/4.
 alias vim='nvim'
 alias ua='sudo pacman --noconfirm -Syyyu'
 alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.45'
