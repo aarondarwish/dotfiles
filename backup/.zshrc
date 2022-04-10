@@ -127,6 +127,7 @@ alias temp='for i in `seq 1 1000`; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d
 alias s='systemctl suspend'
 alias scan='python ~/Projects/automation/autoscan/autoscan.py'
 alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
+alias db='cd /home/coder/Documents/career/portfolio/backend && sanity start'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
