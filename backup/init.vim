@@ -106,92 +106,95 @@ function! s:doincrement(step, ...)
                 let i += a:step
                 " increment the current line by <i>
                 exe "normal! ".i.incrementer
-            end
-        endwhile
+                end
+            endwhile
+        endif
+    endfunction
+
+    vnoremap <silent> <Plug>VisualIncrement :<C-U>call <SID>doincrement(v:count1)<CR>
+    vnoremap <silent> <Plug>VisualDecrement :<C-U>call <SID>doincrement(v:count1, 1)<CR>
+
+    if !hasmapto("<Plug>VisualIncrement")
+        vmap <C-A>  <Plug>VisualIncrement
     endif
-endfunction
+    if !hasmapto("<Plug>VisualDecrement")
+        vmap <C-X>  <Plug>VisualDecrement
+    endif
 
-vnoremap <silent> <Plug>VisualIncrement :<C-U>call <SID>doincrement(v:count1)<CR>
-vnoremap <silent> <Plug>VisualDecrement :<C-U>call <SID>doincrement(v:count1, 1)<CR>
-
-if !hasmapto("<Plug>VisualIncrement")
-    vmap <C-A>  <Plug>VisualIncrement
-endif
-if !hasmapto("<Plug>VisualDecrement")
-    vmap <C-X>  <Plug>VisualDecrement
-endif
-
-let &cpo = s:cpo_save
+    let &cpo = s:cpo_save
 
 
-" VimTeX Configs
+    " VimTeX Configs
 
-" This is necessary for VimTeX to load properly. The "indent" is optional.
-" Note that most plugin managers will do this automatically.
-filetype plugin indent on
+    " This is necessary for VimTeX to load properly. The "indent" is optional.
+    " Note that most plugin managers will do this automatically.
+    filetype plugin indent on
 
-" This enables Vim's and neovim's syntax-related features. Without this, some
-" VimTeX features will not work (see ":help vimtex-requirements" for more
-" info).
-syntax enable
+    " This enables Vim's and neovim's syntax-related features. Without this, some
+    " VimTeX features will not work (see ":help vimtex-requirements" for more
+    " info).
+    syntax enable
 
-" Viewer options: One may configure the viewer either by specifying a built-in
-" viewer method:
-let g:vimtex_view_method = 'zathura'
+    " Viewer options: One may configure the viewer either by specifying a built-in
+    " viewer method:
+    let g:vimtex_view_method = 'zathura'
 
-" Or with a generic interface:
-"let g:vimtex_view_general_viewer = 'okular'
-"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-"let g:vimtex_view_general_options_latexmk = '--unique'
+    " Or with a generic interface:
+    "let g:vimtex_view_general_viewer = 'okular'
+    "let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+    "let g:vimtex_view_general_options_latexmk = '--unique'
 
-" VimTeX uses latexmk as the default compiler backend. If you use it, which is
-" strongly recommended, you probably don't need to configure anything. If you
-" want another compiler backend, you can change it as follows. The list of
-" supported backends and further explanation is provided in the documentation,
-" see ":help vimtex-compiler".
-let g:vimtex_compiler_method = 'latexmk'
+    " VimTeX uses latexmk as the default compiler backend. If you use it, which is
+    " strongly recommended, you probably don't need to configure anything. If you
+    " want another compiler backend, you can change it as follows. The list of
+    " supported backends and further explanation is provided in the documentation,
+    " see ":help vimtex-compiler".
+    let g:vimtex_compiler_method = 'latexmk'
 
-" Most VimTeX mappings rely on localleader and this can be changed with the
-" following line. The default is usually fine and is the symbol "\".
-"let maplocalleader = ","
+    " Most VimTeX mappings rely on localleader and this can be changed with the
+    " following line. The default is usually fine and is the symbol "\".
+    "let maplocalleader = ","
 
-let g:vimtex_compiler_latexmk = {
-            \ 'options' : [
-                \   '-shell-escape',
-                \   '-verbose',
-                \   '-file-line-error',
-                \   '-synctex=1',
-                \   '-interaction=nonstopmode',
-                \ ],
-                \}
-"let g:vimtex_compiler_latexmk_engines = {
-"            \    '_'                : '-xelatex',
-"            \    }
-let g:vimtex_format_enabled = 1
-let g:vimtex_indent_enabled = 1
+    let g:vimtex_compiler_latexmk = {
+                \ 'options' : [
+                    \   '-shell-escape',
+                    \   '-verbose',
+                    \   '-file-line-error',
+                    \   '-synctex=1',
+                    \   '-interaction=nonstopmode',
+                    \ ],
+                    \}
 
-" Hide warnings in VimTeX
-let g:vimtex_quickfix_ignore_filters = [
-            \ 'Underfull',
-            \ 'Overfull',
-            \]
+    " The following engine is used for the notes taking, remove it when you build
+    " out your CV however
+    let g:vimtex_compiler_latexmk_engines = {
+                \    '_'                : '-xelatex',
+                \    }
+    let g:vimtex_format_enabled = 1
+    let g:vimtex_indent_enabled = 1
 
-let g:coc_node_path = '/home/coder/.nvm/versions/node/v17.2.0/bin/node'
+    " Hide warnings in VimTeX
+    let g:vimtex_quickfix_ignore_filters = [
+                \ 'Underfull',
+                \ 'Overfull',
+                \]
 
-" C++
-let g:clang_use_library = 1
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+    let g:coc_node_path = '/home/coder/.nvm/versions/node/v17.2.0/bin/node'
 
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight Normal guibg=none
-highlight NonText guibg=none
+    " C++
+    let g:clang_use_library = 1
+    let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+    highlight Normal ctermbg=none
+    highlight NonText ctermbg=none
+    highlight Normal guibg=none
+    highlight NonText guibg=none
 
-" Automatically enable the coloured parentheses.
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
-let g:rainbow#max_level = 16
-autocmd VimEnter * RainbowParentheses .
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+    " Automatically enable the coloured parentheses.
+    let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+    let g:rainbow#max_level = 16
+    autocmd VimEnter * RainbowParentheses .
