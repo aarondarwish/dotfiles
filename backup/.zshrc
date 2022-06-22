@@ -158,3 +158,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# LifeWorks env values setup
+AWS_PROFILE=lwdev
+
