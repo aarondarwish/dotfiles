@@ -1,3 +1,4 @@
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,19 +6,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export VISUAL=nvim;
-export EDITOR=nvim;
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/coder/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -86,6 +84,7 @@ plugins=(
   zsh-syntax-highlighting 
 )
 
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -113,10 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
-fi
 
+#if [ "$TMUX" = "" ]; then tmux; fi
 TREE_IGNORE="cache|log|logs|node_modules|vendor"
 
 alias l='exa --color=auto --icons --group-directories-first'
@@ -125,23 +122,11 @@ alias ll='l --git -l'
 alias lt='l --tree -D -L 10 -I ${TREE_IGNORE}'
 alias lm='l | rg "\.[jpmwgi][pneic]e?[bg34fo]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico and mp3/4.
 alias v='nvim'
-alias ua='sudo pacman --noconfirm -Syyyu'
-alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.85'
-alias off='sudo /home/coder/.msi-rgb/target/release/msi-rgb -x FF000000 00FF0000 0000FF00'
-alias on='sudo /home/coder/.msi-rgb/target/release/msi-rgb FF00000 FF000000 FF000000'
-alias rn='sudo systemctl restart iwd'
-alias sdkmanager='/opt/android-sdk/cmdline-tools/latest/bin/sdkmanager'
 alias public-ip='curl https://ipinfo.io/ip && echo "\n"'
-alias c='xclip -selection clipboard'
+alias c='pbcopy -selection clipboard'
 alias p='clippaste'
-# Print the CPU temperature, and the NVIDIA GPU temperature (Presuming proprietary NVIDIA drivers & utils are installed.
-alias temp='for i in `seq 1 1000`; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d°C" && echo "\nGPU:\n" && nvidia-smi | rg "\d+C"; sleep 1; done'
-alias s='systemctl suspend'
-alias scan='python ~/Projects/automation/autoscan/autoscan.py'
-alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
-alias db='cd /home/coder/Documents/career/portfolio/backend && sanity start'
-alias out='sudo systemctl stop iwd.service'
 
+if [ "$TMUX" = "" ]; then tmux; fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -156,9 +141,15 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+
+
 
 # LifeWorks env values setup
 AWS_PROFILE=lwdev
+
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
