@@ -160,5 +160,5 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # LifeWorks env values setup
-AWS_PROFILE=lwdev
-
+export AWS_PROFILE=lwdev
+export AWS_REGION=eu-west-2
