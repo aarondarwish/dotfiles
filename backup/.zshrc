@@ -123,7 +123,7 @@ alias l='exa --color=auto --icons --group-directories-first'
 alias la='l -a'
 alias ll='l --git -l'
 alias lt='l --tree -D -L 10 -I ${TREE_IGNORE}'
-alias lm='l | rg "\.[jpmwgi][pneic]e?[bg34fo]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico and mp3/4.
+alias lm='l | rg "\.[jpmwgi][pneick]e?[bg34fov]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico and mp3/4.
 alias v='nvim'
 alias ua='sudo pacman --noconfirm -Syyyu'
 alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.85'
@@ -160,5 +160,6 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # LifeWorks env values setup
-export AWS_PROFILE=lwdev
-export AWS_REGION=eu-west-2
+# export AWS_PROFILE=lwdev
+# export AWS_REGION=eu-west-2
+export USER=aaron
