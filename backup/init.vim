@@ -192,9 +192,9 @@ function! s:doincrement(step, ...)
     highlight Normal guibg=none
     highlight NonText guibg=none
 
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+"    inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
     " Automatically enable the coloured parentheses.
     let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
