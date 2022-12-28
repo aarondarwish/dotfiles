@@ -123,7 +123,7 @@ alias l='exa --color=auto --icons --group-directories-first'
 alias la='l -a'
 alias ll='l --git -l'
 alias lt='l --tree -D -L 10 -I ${TREE_IGNORE}'
-alias lm='l | rg "\.[jpmwgi][pneick]e?[bg34fov]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico and mp3/4.
+alias lm='l | rg "\.[jpmwgi][pneick]e?[bg34fov]p?"' # List common multimedia files such as jpg/jpeg, png, gif, webp, ico, mp3/4 and mkv.
 alias v='nvim'
 alias ua='sudo pacman --noconfirm -Syyyu'
 alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.85'
