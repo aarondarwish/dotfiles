@@ -141,6 +141,7 @@ alias scan='python ~/Projects/automation/autoscan/autoscan.py'
 alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
 alias db='cd /home/coder/Documents/career/portfolio/backend && sanity start'
 alias out='sudo systemctl stop iwd.service'
+alias mass-pull='ls | xargs -I{} git -C {} pull' # To do it in parallel: ls | xargs -P10 -I{} git -C {} pull
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
