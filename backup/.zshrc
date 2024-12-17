@@ -11,7 +11,7 @@ export EDITOR=nvim;
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/coder/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -127,8 +127,8 @@ alias lm='l | rg "\.[sjpmwgi][vpneick]e?[bg34fov]p?"' # List common multimedia f
 alias v='nvim'
 alias ua='sudo pacman --noconfirm -Syyyu'
 alias lb='xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.85'
-alias off='sudo /home/coder/.msi-rgb/target/release/msi-rgb -x FF000000 00FF0000 0000FF00'
-alias on='sudo /home/coder/.msi-rgb/target/release/msi-rgb FFFFFF 000000 000000'
+alias off='sudo $HOME/.msi-rgb/target/release/msi-rgb -x FF000000 00FF0000 0000FF00'
+alias on='sudo $HOME/.msi-rgb/target/release/msi-rgb FFFFFF 000000 000000'
 alias rn='sudo systemctl restart iwd'
 alias sdkmanager='/opt/android-sdk/cmdline-tools/latest/bin/sdkmanager'
 alias public-ip='curl https://ipinfo.io/ip && echo "\n"'
@@ -139,7 +139,7 @@ alias temp='for i in `seq 1 1000`; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d
 alias s='systemctl suspend'
 alias scan='python ~/Projects/automation/autoscan/autoscan.py'
 alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
-alias db='cd /home/coder/Documents/career/portfolio/backend && sanity start'
+alias db='cd $HOME/Documents/career/portfolio/backend && sanity start'
 alias out='sudo systemctl stop iwd.service'
 alias mass-pull='ls | xargs -I{} git -C {} pull' # To do it in parallel: ls | xargs -P10 -I{} git -C {} pull
 
@@ -167,14 +167,14 @@ export USER=aaron
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/coder/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# __conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/home/coder/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/coder/anaconda3/etc/profile.d/conda.sh"
+#     if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "$HOME/anaconda3/etc/profile.d/conda.sh"
 #     else
-#         export PATH="/home/coder/anaconda3/bin:$PATH"
+#         export PATH="$HOME/anaconda3/bin:$PATH"
 #     fi
 # fi
 # unset __conda_setup
