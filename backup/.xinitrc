@@ -1,2 +1,19 @@
-setxkbmap gb && feh --bg-scale ~/Media/Wallpapers/study.jpg && xrandr --output HDMI-0 --gamma 1.1:0.8:0.7 --brightness 0.9 && picom -c -b
-exec dwm && ~/.dwmblocks/dwmblocks
+#!/bin/sh
+
+# Set keyboard layout
+setxkbmap gb
+
+# Set background wallpaper
+feh --bg-scale ~/Media/Wallpapers/micro.jpg
+
+# Enable redshift for color temperature adjustment
+redshift -O 5000 &
+
+# Start Picom (compositor for transparency, etc.)
+picom --config ~/.config/picom/picom.conf &
+
+# Run dwmblocks in the background
+~/.dwmblocks/dwmblocks &
+
+# Start dwm as the window manager
+exec dwm
