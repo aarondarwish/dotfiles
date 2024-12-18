@@ -10,7 +10,7 @@ feh --bg-scale ~/Media/Wallpapers/micro.jpg
 redshift -O 5000 &
 
 # Start Picom (compositor for transparency, etc.)
-picom --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom.conf &
 
 # Run dwmblocks in the background
 ~/.dwmblocks/dwmblocks &
