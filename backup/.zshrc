@@ -142,6 +142,7 @@ alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
 alias db='cd $HOME/Documents/career/portfolio/backend && sanity start'
 alias out='sudo systemctl stop iwd.service'
 alias mass-pull='ls | xargs -I{} git -C {} pull' # To do it in parallel: ls | xargs -P10 -I{} git -C {} pull
+alias timestamp='date +"%Y%m%d_%H%M%S"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
