@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# For a full list of active aliases, run alias.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -119,6 +119,8 @@ fi
 # 
 TREE_IGNORE="cache|log|logs|node_modules|vendor"
 
+alias vpn='protonvpn-connect.sh /etc/openvpn/client/us-free-11.protonvpn.udp.ovpn'
+alias killsound='sudo fuser -k /dev/snd/*'
 alias l='exa --color=auto --icons --group-directories-first'
 alias la='l -a'
 alias ll='l --git -l'
@@ -135,7 +137,7 @@ alias public-ip='curl https://ipinfo.io/ip && echo "\n"'
 alias c='xclip -selection clipboard'
 alias p='clippaste'
 # Print the CPU temperature, and the NVIDIA GPU temperature (Presuming proprietary NVIDIA drivers & utils are installed.
-alias temp='for i in `seq 1 1000`; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d°C" && echo "\nGPU:\n" && nvidia-smi | rg "\d+C"; sleep 1; done'
+alias temp='for i in seq 1 1000; do echo "\nCPU:\n" && sensors | rg "\+\d+\.\d°C" && echo "\nGPU:\n" && nvidia-smi | rg "\d+C"; sleep 1; done'
 alias s='systemctl suspend'
 alias scan='python ~/Projects/automation/autoscan/autoscan.py'
 alias warning='journalctl --this-boot --no-pager | grep -i WARNING'
@@ -143,6 +145,7 @@ alias db='cd $HOME/Documents/career/portfolio/backend && sanity start'
 alias out='sudo systemctl stop iwd.service'
 alias mass-pull='ls | xargs -I{} git -C {} pull' # To do it in parallel: ls | xargs -P10 -I{} git -C {} pull
 alias timestamp='date +"%Y%m%d_%H%M%S"'
+alias le='nvim Documents/notes/english/words.org' # Learn new English words
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -158,7 +161,7 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run p10k configure or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # LifeWorks env values setup
@@ -183,3 +186,6 @@ export USER=aaron
 
 # Rust path
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Created by `pipx` on 2025-02-26 20:10:45
+export PATH="$PATH:/home/doctor/.local/bin"

@@ -4,7 +4,7 @@
 setxkbmap gb
 
 # Set background wallpaper
-feh --bg-scale ~/Media/Wallpapers/micro.jpg
+feh --bg-scale ~/Media/wallpapers/micro.jpg
 
 # Start Picom (compositor for transparency, etc.)
 picom --config ~/.config/picom.conf &
